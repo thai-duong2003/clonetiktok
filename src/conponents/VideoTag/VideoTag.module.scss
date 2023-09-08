@@ -1,0 +1,28 @@
+.wrapper {
+  margin-left: 15px;
+  video {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    height: 100%;
+  }
+}
+.profilevideo {
+  width: 200px;
+  margin-top: 10px;
+  min-height: 370px;
+  position: relative;
+  video {
+    height: 280px;
+  }
+}
+.detailvideo {
+  margin-left: 0;
+  z-index: 3;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  video {
+    object-fit: contain;
+  }
+}
