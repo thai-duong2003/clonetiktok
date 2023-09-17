@@ -1,21 +1,12 @@
-import {
-  faBan,
-  faEllipsis,
-  faLock,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEllipsis, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tippy from "@tippyjs/react/headless";
 import classNames from "classnames/bind";
 import { useEffect, useRef, useState } from "react";
 import { Await, Link } from "react-router-dom";
+import Baocaoblock from "~/conponents/baocaoblock";
 import Button from "~/conponents/Button";
-import {
-  Baocaoicon,
-  Lockicon,
-  PlaypathIcon,
-  Sharepathicon,
-} from "~/conponents/Icon/Icon";
+import { Lockicon, PlaypathIcon, Sharepathicon } from "~/conponents/Icon/Icon";
 import Image from "~/conponents/Image";
 import Menu from "~/conponents/Menu";
 import { Wrapper } from "~/conponents/popper";
@@ -25,16 +16,7 @@ import * as profileservice from "~/Services/profileService";
 import styles from "./Profile.module.scss";
 
 const cx = classNames.bind(styles);
-const array = [
-  {
-    icon: <Baocaoicon />,
-    title: "Báo cáo",
-  },
-  {
-    icon: <FontAwesomeIcon icon={faBan} />,
-    title: "Chặn",
-  },
-];
+
 function Profile() {
   const [isvideo, setisvideo] = useState(true);
   const [nickuser, setnickuser] = useState({ videos: [] });
@@ -106,11 +88,7 @@ function Profile() {
             </span>
           </Tippy>
 
-          <Menu items={array}>
-            <span>
-              <FontAwesomeIcon icon={faEllipsis} />
-            </span>
-          </Menu>
+          <Baocaoblock />
         </div>
       </div>
       <div className={cx("videoblock")}>

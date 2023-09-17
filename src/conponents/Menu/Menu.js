@@ -12,6 +12,8 @@ const defaultfn = () => {};
 function Menu({
   children,
   items = [],
+  X,
+  Y,
   hideOnClick = false,
   onchange = defaultfn,
   isright = false,
@@ -39,12 +41,12 @@ function Menu({
     });
   };
   const map = isright ? "right" : "bottom-end";
-  const placement = isright ? [15, 20] : [15, 8];
+  const placement = [X, Y];
 
   return (
     <Tippy
       interactive
-      offset={placement}
+      offset={X === undefined && Y === undefined ? [15, 8] : placement}
       delay={[0, 500]}
       placement={map}
       hideOnClick={hideOnClick}

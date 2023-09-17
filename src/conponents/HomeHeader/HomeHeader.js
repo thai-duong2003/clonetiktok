@@ -66,8 +66,10 @@ function HomeHeaderItem({ data, className }) {
             </Link>
           </Accprevi>
           <div className={cx("contents")}>
-            <p className={cx("content", ismore && "block")}>{test}</p>
-            {test.length >= 95 &&
+            <p className={cx("content", ismore && "block")}>
+              {data.description}
+            </p>
+            {data.description.length >= 95 &&
               (ismore ? (
                 <span className={cx("more")} onClick={() => setismore(false)}>
                   less

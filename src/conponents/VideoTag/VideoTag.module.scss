@@ -10,7 +10,7 @@
 .profilevideo {
   width: 200px;
   margin-top: 10px;
-  min-height: 370px;
+  min-height: 321px;
   position: relative;
   video {
     height: 280px;
@@ -24,5 +24,28 @@
   width: 100%;
   video {
     object-fit: contain;
+  }
+}
+.playpause {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9;
+  transform: translate(-50%, -50%);
+  &.hide {
+    animation: hide linear 0.3s;
+  }
+  svg {
+    height: 60px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+@keyframes hide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

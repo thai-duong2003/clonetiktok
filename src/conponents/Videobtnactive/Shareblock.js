@@ -8,6 +8,7 @@ import {
 import Button from "../Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { useMemo } from "react";
 export const shaerbloc = {
   data: [
     {
@@ -36,13 +37,13 @@ export const shaerbloc = {
   ],
 };
 
-function Shareblock({ data }) {
+function Shareblock({ data, videodetaill = false }) {
   return (
     <>
       {shaerbloc.data.map((item, index) => {
         return (
           <Button Videobtnactive key={index} lefticon={item.icon}>
-            {item.title}
+            {videodetaill === true ? "" : item.title}
           </Button>
         );
       })}

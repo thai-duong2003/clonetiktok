@@ -12,7 +12,6 @@ function DefaultLayout({ children }) {
       setpretop(true);
     } else setpretop(false);
   };
-
   return (
     <div className={cx("wrapper")}>
       <Header />

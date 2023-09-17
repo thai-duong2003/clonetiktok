@@ -5,46 +5,50 @@ import { faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
 import { Volumeicon } from "../Icon/Icon";
 import { useRef, useState, useEffect } from "react";
 import { Value } from "sass";
+import { config, setconfig } from "~/App";
 
 const cx = classNames.bind(styles);
 //local
-const savelocal = "Tiktok";
+// const savelocal = "Tiktok";
 
-export const config = JSON.parse(localStorage.getItem(savelocal)) || {};
-export const setconfig = (key, Value) => {
-  config[key] = Value;
-  localStorage.setItem(savelocal, JSON.stringify(config));
-};
-function Volume({ mutevolume = false, element }) {
+// export const config = JSON.parse(localStorage.getItem(savelocal)) || {};
+// export const setconfig = (key, Value) => {
+//   config[key] = Value;
+//   localStorage.setItem(savelocal, JSON.stringify(config));
+// };
+function Volume({ element }) {
   const [ismuted, setismuted] = useState(
     config.ismute === undefined ? true : config.ismute
   );
   const [ishovervolume, setishovervolume] = useState(false);
-
   const [valuevo, setvaluevo] = useState(config.volumValue);
+  const volumref = useRef();
+  // setconfig("ismute", ismuted); //muted
+  config.ismute = ismuted;
 
   const onvolum = () => {
-    config.ismute = false;
-    // config.volumValue = config.volumValue === undefined ? 1 : config.volumValue;
-    // setvaluevo(() => element.volume);
+    element.volume = config.volumValue === undefined ? 1 : config.volumValue;
+    setvaluevo(config.volumValue === undefined ? 1 : config.volumValue);
     setismuted(false);
+    if (config.volumValue === undefined) {
+      config.volumValue = 1;
+    }
   };
 
   const offvolum = () => {
-    // element.volume = 0;
-    config.ismute = false;
-    setvaluevo(() => element.volume);
+    element.volume = 0;
     setismuted(true);
   };
 
-  let val = (valuevo / 1) * 100 + "%";
+  let val = config.ismute === true ? "0" : (valuevo / 1) * 100 + "%";
   var change = (e) => {
     var volumevalue = e.target.value;
     setconfig("volumValue", volumevalue);
     setvaluevo(() => config.volumValue);
-    config.ismute=false
-    // element.volume = valuevo;
+    setismuted(false);
+    element.volume = config.volumValue;
   };
+  element.muted = ismuted;
 
   return (
     <div
@@ -57,7 +61,10 @@ function Volume({ mutevolume = false, element }) {
         <div className={cx("changevolum")}>
           <div className={cx("ranslider")}>
             <input
-              value={valuevo === undefined ? "0" : valuevo}
+              ref={volumref}
+              value={
+                config.ismute === true || valuevo === undefined ? "0" : valuevo
+              }
               type="range"
               min="0"
               max="1"

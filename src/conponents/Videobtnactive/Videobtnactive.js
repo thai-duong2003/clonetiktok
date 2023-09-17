@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Shareblock from "./Shareblock";
 import classNames from "classnames/bind";
 import styles from "./Videobtnactive.module.scss";
+import { memo, useEffect, useMemo } from "react";
 
 import Tippy from "@tippyjs/react/headless";
 import Button from "../Button";
@@ -14,28 +15,30 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
-function Videobtnactive({ data }) {
+function Videobtnactive({ data, className, deletelastitem = false }) {
   const btnactive = [
     {
       icon: <FontAwesomeIcon icon={faHeart} />,
-      title: `${data.likes_count} M`,
+      title: data.likes_count,
     },
     {
       icon: <FontAwesomeIcon icon={faCommentDots} />,
-      title: `${data.comments_count} K`,
+      title: data.comments_count,
     },
     {
       icon: <FontAwesomeIcon icon={faBookmark} />,
-      title: `${data.views_count} k`,
+      title: data.views_count,
     },
     {
       icon: <FontAwesomeIcon icon={faShare} />,
-      title: `${data.shares_count} k`,
+      title: data.shares_count,
       children: true,
     },
   ];
+  deletelastitem && btnactive.pop();
+
   return (
-    <div className={cx("wrapper")}>
+    <div className={cx("wrapper", { [className]: className })}>
       {btnactive.map((item, index) => {
         const isparent = !item.children;
 
