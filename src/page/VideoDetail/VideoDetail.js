@@ -62,7 +62,11 @@ function VideoDetail() {
         ></div>
         <div className={cx("overlay")}></div>
 
-        <VideoTag className={"detailvideo"} src={data.vidoe[index]}></VideoTag>
+        <VideoTag
+          className={"detailvideo"}
+          src={data.vidoe[index]}
+          onlodedplay
+        ></VideoTag>
         {/*  */}
         <div className={cx("wrappercontrol")}>
           <div className={cx("close", "btn")}>

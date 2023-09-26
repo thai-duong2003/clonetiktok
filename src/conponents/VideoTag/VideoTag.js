@@ -10,6 +10,7 @@ function VideoTag({
   src,
   mouseOverAutoPlay = false,
   mouseOutAutoPause = false,
+  onlodedplay = false,
   muted = false,
   playbtn = true,
   children,
@@ -57,7 +58,7 @@ function VideoTag({
         ref={videref}
         src={src}
         loop
-        onLoadedData={play}
+        onLoadedData={onlodedplay ? play : noactive}
       />
 
       {playbtn && !isplay && (
