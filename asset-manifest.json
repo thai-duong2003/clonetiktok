@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/clonetiktok/static/css/main.0438ae92.css",
+    "main.js": "/clonetiktok/static/js/main.3707a75f.js",
+    "static/js/787.562284d7.chunk.js": "/clonetiktok/static/js/787.562284d7.chunk.js",
+    "static/media/Download .mp4": "/clonetiktok/static/media/Download .14b725d90cd9dd87ab22.mp4",
+    "static/media/Download1.mp4": "/clonetiktok/static/media/Download1.afe24258171a92ee30ae.mp4",
+    "static/media/Download2.mp4": "/clonetiktok/static/media/Download2.8f32443902cd5deeaf10.mp4",
+    "static/media/sofiapro-bold.woff": "/clonetiktok/static/media/sofiapro-bold.086ed00f3060992f2938.woff",
+    "static/media/Proxima-Nova-Bold.woff": "/clonetiktok/static/media/Proxima-Nova-Bold.6cd7dcaa6293ecf61e80.woff",
+    "static/media/Proxima-Nova-Regular.woff2": "/clonetiktok/static/media/Proxima-Nova-Regular.6c83037ae28747e6d774.woff2",
+    "static/media/Proxima-Nova-Semibold.woff2": "/clonetiktok/static/media/Proxima-Nova-Semibold.c5632e80f6e35c93156f.woff2",
+    "static/media/logo.svg": "/clonetiktok/static/media/logo.14788dbb20dc655d0dbaac43503d6b98.svg",
+    "index.html": "/clonetiktok/index.html",
+    "main.0438ae92.css.map": "/clonetiktok/static/css/main.0438ae92.css.map",
+    "main.3707a75f.js.map": "/clonetiktok/static/js/main.3707a75f.js.map",
+    "787.562284d7.chunk.js.map": "/clonetiktok/static/js/787.562284d7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0438ae92.css",
+    "static/js/main.3707a75f.js"
+  ]
+}
