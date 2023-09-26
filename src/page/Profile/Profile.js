@@ -32,7 +32,7 @@ function Profile() {
       const resuilt = await profileservice.getaUser(pathname);
       setnickuser(resuilt);
     };
-    fetchApi();
+    // fetchApi();
   }, []);
   return (
     <div className={cx("wrapper")}>
