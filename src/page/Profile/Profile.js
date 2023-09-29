@@ -25,7 +25,7 @@ function Profile() {
   const video = () => setisvideo(true);
   const lock = () => setisvideo(false);
 
-  // const pathname = document.location.pathname;
+   const pathname = "/@thaiq9577";
 
   useEffect(() => {
     const fetchApi = async () => {
